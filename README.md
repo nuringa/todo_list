@@ -1,24 +1,35 @@
-# README
+# TODO список задач
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Приложение выполнено на Ruby on Rails 5.2.4
 
-Things you may want to cover:
+Склонируйте репозиторий:
 
-* Ruby version
+```
+git@github.com:nuringa/todo_list.git
+```
 
-* System dependencies
+Запустите из директории проекта
 
-* Configuration
+```
+bundle
+```
 
-* Database creation
+Необходимо создать и настроить PostgreSQL для проекта. Шаблон файла находится в 
+```
+config/database.yml.sample
+```
+Переименовываем в 'database.yml' и записываем в него логин пользователя PostgreSQL и пароль
 
-* Database initialization
+Далее создаем бд проекта, вызвав из консоли:
+```
+bin/rails db:setup
+```
+Запускаем сервер:
+```
+bin/rails s
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Приложение смотрим по адресу:
+```
+http://localhost:3000
+```
