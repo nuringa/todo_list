@@ -19,8 +19,7 @@ class TasksController < ApplicationController
     @task = @project.tasks.create(task_params)
 
     if @task.save
-      #TODO flash messages errors
-      redirect_to project_path(@project), notice: 'Task was successfully created.'
+      redirect_to project_path(@project), notice: 'Задача успешно создана'
     else
       render @project
     end
@@ -36,7 +35,7 @@ class TasksController < ApplicationController
 
   def destroy
     if @task.destroy
-      redirect_to @project, notice: 'Task was successfully destroyed.'
+      redirect_to @project, alert: 'Задача удалена'
     end
   end
 

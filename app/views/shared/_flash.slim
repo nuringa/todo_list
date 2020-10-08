@@ -1,0 +1,6 @@
+.div
+  .container.mt-2
+    - flash.each do |type, message|
+      div class=("alert #{bootstrap_class_for_flash(type)} alert-dismissible")
+        a.close aria-label="close" data-dismiss="alert" href="#"  &times;
+        == message
