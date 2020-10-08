@@ -1,0 +1,10 @@
+tr
+  td.align-middle= task.id
+  td.align-middle
+    = content_tag :span, task.title, class: 'task-title'
+  td.align-middle= display_deadline(task.deadline)
+  td.align-middle= task.active
+
+  td.align-middle= link_to 'Edit', edit_project_task_path(@project, task)
+  td.align-middle= link_to 'Delete', project_task_path(@project, task),
+          data: {confirm: 'Are you sure?'}, method: :delete

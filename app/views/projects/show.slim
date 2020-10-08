@@ -1,0 +1,27 @@
+.container
+  .row.justify-content-start
+    .col-auto
+      h1
+        .title.text-info Список задач
+      h4
+        .title.text-info = @project.title
+
+    .container
+      .table.table-hover
+        table.projects-table
+          tr
+            th №
+            th.text-center = fa_icon 'edit'
+            th.text-center = fa_icon 'clock'
+            / th = fa_icon 'check'
+            th
+
+            th.text-center colspan="3" = fa_icon 'trash'
+
+            = render @project.tasks
+
+      = render 'tasks/form'
+
+      .mt-5
+        = link_to 'Edit project', edit_project_path(@project), class: 'btn btn-info mr-3'
+        = link_to 'Back', projects_path, class: 'btn btn-info mr-3'

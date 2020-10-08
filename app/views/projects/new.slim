@@ -1,0 +1,8 @@
+.container
+  h1 Новый список задач
+  .row.justify-content-start
+
+    .col-auto
+      = render 'form'
+
+      = link_to 'Назад', projects_path, class: 'btn btn-info mr-3'

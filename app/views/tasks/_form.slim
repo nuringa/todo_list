@@ -1,0 +1,15 @@
+.container
+  .form
+    = form_for [@project, @project.tasks.build] do |f|
+      .form-row
+        .col
+          = f.label :title, class: 'col-form-label-sm'
+          p
+            = f.text_field :title, class: 'form-control form-control-sm'
+        .col
+          = f.label :deadline, class: 'col-form-label-sm'
+          p
+            = f.date_select :deadline, class: 'form-control form-control-sm'
+
+      p
+        = f.submit 'Создать задачу', class: 'btn btn-secondary'

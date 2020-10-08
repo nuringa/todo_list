@@ -1,0 +1,17 @@
+.container
+  .row
+    .col-auto
+      h1
+        .title.text-info ToDo
+    .container
+      .table.table-hover
+        table.projects-table
+          tr
+            th Title
+            th Task Count
+            th Created At
+            th colspan="2" Actions
+
+            = render @projects
+        .mt-5
+          = link_to 'Create Project', new_project_path, class: 'btn btn-info mr-3'
