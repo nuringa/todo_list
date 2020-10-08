@@ -2,7 +2,7 @@ tr
   td.align-middle
     = content_tag :span, project.title, class: 'project-title'
   td.align-middle= project.tasks.count
-  td.align-middle= display_deadline(project.created_at)
+  td.align-middle= display_date(project.created_at)
 
   td.align-middle= link_to 'Посмотреть', project_path(project)
   td.align-middle= link_to '', project_path(project), class: 'fa fa-trash black',

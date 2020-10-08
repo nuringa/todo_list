@@ -3,8 +3,8 @@
     .col-auto
       h1.mb-3
         .title.text-info Список задач
-      h4
-        .title.text-info = @project.title
+      h3
+        .title.text-secondary = @project.title
 
     .container
       .table.table-hover
@@ -12,7 +12,8 @@
           tr
             th.text-center Статус
             th.text-center Задача
-            th.text-center Срок
+            th.text-center Дата
+            th colspan="2"
 
             = render @project.tasks
 

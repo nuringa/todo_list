@@ -18,7 +18,7 @@ module ApplicationHelper
     end
   end
 
-  def display_deadline(date)
+  def display_date(date)
     date&.strftime("%m/%d/%Y")
   end
 end

@@ -6,10 +6,6 @@
           = f.label 'Новая задача', class: 'col-form-label-sm'
           p
             = f.text_field :title, class: 'form-control form-control-sm'
-        .col
-          = f.label 'Срок', class: 'col-form-label-sm'
-          p
-            = f.date_select :deadline, class: 'form-control form-control-sm'
 
       p
         = f.submit 'Сохранить', class: 'btn btn-secondary'
