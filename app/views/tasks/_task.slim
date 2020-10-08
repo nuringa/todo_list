@@ -1,10 +1,15 @@
 tr
-  td.align-middle= task.id
-  td.align-middle
-    = content_tag :span, task.title, class: 'task-title'
-  td.align-middle= display_deadline(task.deadline)
-  td.align-middle= task.active
+  - if task.complete
+    td.text-center = fa_icon('check')
+    td.align-middle
+      = content_tag :span, task.title, class: 'task-title-complete'
+    td.align-middle.task-deadline-complete = display_deadline(task.deadline)
+  - else
+    td.text-center = link_to '', complete_project_task_path(@project, task),
+          method: :patch, class: 'btn btn-outline-danger btn-sm fas fa-tasks'
+    td.align-middle
+      = content_tag :span, task.title, class: 'task-title'
+    td.align-middle = display_deadline(task.deadline)
 
-  td.align-middle= link_to '', edit_project_task_path(@project, task), class: 'far fa-edit'
-  td.align-middle= link_to '', project_task_path(@project, task), class: 'fa fa-trash',
-          data: {confirm: 'Вы уверены?'}, method: :delete
+  td.align-middle = link_to '', edit_project_task_path(@project, task), class: 'far fa-edit'
+  td.align-middle = link_to '', project_task_path(@project, task), class: 'fa fa-trash', method: :delete

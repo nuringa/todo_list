@@ -3,13 +3,12 @@
     = form_for [@project, @project.tasks.build] do |f|
       .form-row
         .col
-          = f.label 'Название', class: 'col-form-label-sm'
+          = f.label 'Новая задача', class: 'col-form-label-sm'
           p
             = f.text_field :title, class: 'form-control form-control-sm'
         .col
           = f.label 'Срок', class: 'col-form-label-sm'
           p
-            / TODO русификация дат
             = f.date_select :deadline, class: 'form-control form-control-sm'
 
       p

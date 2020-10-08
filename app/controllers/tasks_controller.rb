@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: %w[edit update destroy]
-  before_action :set_project, only: %w[new edit create update destroy]
+  before_action :set_task, only: %w[edit update destroy complete]
+  before_action :set_project, only: %w[new edit create update destroy complete]
 
   def new
     @task = Task.new
@@ -24,6 +24,12 @@ class TasksController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def complete
+    @task.update_attributes(complete: true)
+
+    redirect_to @project
   end
 
   def destroy
