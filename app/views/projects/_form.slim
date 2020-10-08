@@ -1,7 +1,9 @@
 .container
   = form_for @project do |f|
-    p
-      = f.label :title
-      = f.text_field :title
-    p
-      = f.submit
+    .form-row
+      .col
+        p
+          = f.label :title, class: 'col-form-label-sm'
+          = f.text_field :title, class: 'form-control form-control-sm'
+        p
+          = f.submit 'Отредактировать Проект', class: 'btn btn-secondary'

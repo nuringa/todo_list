@@ -7,11 +7,11 @@
       .table.table-hover
         table.projects-table
           tr
-            th Title
-            th Task Count
-            th Created At
-            th colspan="2" Actions
+            th Название
+            th Всего задач
+            th Дата создания
+            th colspan="2"
 
             = render @projects
         .mt-5
-          = link_to 'Create Project', new_project_path, class: 'btn btn-info mr-3'
+          = link_to 'Новый ToDo', new_project_path, class: 'btn btn-info mr-3'

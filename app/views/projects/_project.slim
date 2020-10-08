@@ -4,6 +4,6 @@ tr
   td.align-middle= project.tasks.count
   td.align-middle= display_deadline(project.created_at)
 
-  td.align-middle= link_to 'Open', project_path(project)
-  td.align-middle= link_to 'Delete', project_path(project),
-          data: {confirm: 'Are you sure?'}, method: :delete
+  td.align-middle= link_to 'Посмотреть', project_path(project)
+  td.align-middle= link_to '', project_path(project), class: 'fa fa-trash black',
+          data: {confirm: 'Вы уверены?'}, method: :delete

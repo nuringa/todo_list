@@ -1,12 +1,6 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: %w[show edit update destroy]
-  before_action :set_project
-
-  def index
-    @tasks = Task.all
-  end
-
-  def show; end
+  before_action :set_task, only: %w[edit update destroy]
+  before_action :set_project, only: %w[new edit create update destroy]
 
   def new
     @task = Task.new
@@ -15,7 +9,6 @@ class TasksController < ApplicationController
   def edit; end
 
   def create
-
     @task = @project.tasks.create(task_params)
 
     if @task.save
@@ -26,11 +19,11 @@ class TasksController < ApplicationController
   end
 
   def update
-    # if @task.update(task_params)
-    #   redirect_to @project, notice: 'Task was successfully updated.'
-    # else
-    #   render :edit
-    # end
+    if @task.update(task_params)
+      redirect_to project_path(@project), notice: 'Задача успешно обновлена'
+    else
+      render :edit
+    end
   end
 
   def destroy

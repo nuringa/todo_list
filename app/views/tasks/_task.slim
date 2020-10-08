@@ -5,6 +5,6 @@ tr
   td.align-middle= display_deadline(task.deadline)
   td.align-middle= task.active
 
-  td.align-middle= link_to 'Edit', edit_project_task_path(@project, task)
-  td.align-middle= link_to 'Delete', project_task_path(@project, task),
-          data: {confirm: 'Are you sure?'}, method: :delete
+  td.align-middle= link_to '', edit_project_task_path(@project, task), class: 'far fa-edit'
+  td.align-middle= link_to '', project_task_path(@project, task), class: 'fa fa-trash',
+          data: {confirm: 'Вы уверены?'}, method: :delete

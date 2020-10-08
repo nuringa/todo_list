@@ -1,0 +1,8 @@
+.container
+  .row.justify-content-start
+    .col-auto
+      .title.text-info
+        h1 Редактировать Проект
+
+      = render 'form'
+      = link_to 'Назад', project_path(@project), class: 'btn btn-info mr-3'

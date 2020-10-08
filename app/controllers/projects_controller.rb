@@ -5,9 +5,7 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
-  def show
-    @tasks = @project.tasks
-  end
+  def show; end
 
   def new
     @project = Project.new
@@ -27,7 +25,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
-      redirect_to @project, notice: 'Проект успешно изменен'
+      redirect_to project_path(@project), notice: 'Проект успешно изменен'
     else
       render :edit
     end
