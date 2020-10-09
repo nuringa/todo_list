@@ -2,7 +2,8 @@
   - resource_id = resource.methods.include?(:id) ? resource.id : 0
   = content_tag :div, class: 'resource-errors container mb-3 mt-3', data: { resource_id: resource_id }
     .errors-block
-      .alert.alert-danger
+      .alert.alert-danger.alert-dismissible
+        a.close aria-label="close" data-dismiss="alert" href="#"  &times;
         h4 Возникли ошибки:
 
         div.ul.list-group
