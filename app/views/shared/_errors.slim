@@ -1,9 +1,10 @@
 - if resource.present? && resource.errors.any?
   - resource_id = resource.methods.include?(:id) ? resource.id : 0
-  = content_tag :div, class: 'resource-errors', data: { resource_id: resource_id }
+  = content_tag :div, class: 'resource-errors container mb-3 mt-3', data: { resource_id: resource_id }
     .errors-block
-      h2 Возникли ошибки:
+      .alert.alert-danger
+        h4 Возникли ошибки:
 
-      div.ul
-        - resource.errors.full_messages.each do |message|
-          li = message
+        div.ul.list-group
+          - resource.errors.full_messages.each do |message|
+            li = message

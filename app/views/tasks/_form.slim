@@ -2,8 +2,6 @@
   .form
     = form_for [@project, @project.tasks.build] do |f|
 
-      = render 'shared/errors', resource: f.object
-
       .form-row
         .col
           = f.label 'Новая задача', class: 'col-form-label-sm'

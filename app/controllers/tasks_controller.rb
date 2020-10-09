@@ -9,10 +9,13 @@ class TasksController < ApplicationController
   def edit; end
 
   def create
-    if @project.tasks.create(task_params)
-      redirect_to project_path(@project), notice: 'Задача успешно создана'
+    @tasks = @project.tasks.persisted
+    @task = @project.tasks.build(task_params)
+
+    if @task.save(task_params)
+      redirect_to project_path(@project)
     else
-      render @project
+      render 'projects/show'
     end
   end
 
@@ -25,7 +28,7 @@ class TasksController < ApplicationController
   end
 
   def complete
-    @task.update_attributes(complete: true)
+    @task.update(complete: true)
 
     redirect_to @project
   end
@@ -47,6 +50,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :active, :project_id)
+    params.require(:task).permit(:title, :complete, :project_id)
   end
 end
