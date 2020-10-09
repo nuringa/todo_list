@@ -10,7 +10,6 @@
       .table.table-hover
         table.projects-table
           tr
-            th.text-center Статус
             th.text-center Задача
             th.text-center Дата
             th colspan="2"
@@ -20,5 +19,5 @@
       = render 'tasks/form'
 
       .mt-5
-        = link_to 'Редактировать Проект', edit_project_path(@project), class: 'btn btn-info mr-3'
+        = link_to 'Редактировать ToDo', edit_project_path(@project), class: 'btn btn-info mr-3'
         = link_to 'Назад', projects_path, class: 'btn btn-info mr-3'

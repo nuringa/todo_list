@@ -1,5 +1,8 @@
 .container
   = form_for @project do |f|
+
+    = render 'shared/errors', resource: @project
+
     .form-row
       .col
         p

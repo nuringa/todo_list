@@ -1,6 +1,9 @@
 .container
   .form
     = form_for [@project, @task] do |f|
+
+      = render 'shared/errors', resource: @task
+
       .form-row
         .col
           = f.label 'Название', class: 'col-form-label-sm'

@@ -9,9 +9,7 @@ class TasksController < ApplicationController
   def edit; end
 
   def create
-    @task = @project.tasks.create(task_params)
-
-    if @task.save
+    if @project.tasks.create(task_params)
       redirect_to project_path(@project), notice: 'Задача успешно создана'
     else
       render @project
