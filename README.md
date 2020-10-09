@@ -1,5 +1,7 @@
 # TODO список задач
 
+live-demo: https://todo-nuringa.herokuapp.com/
+
 Приложение выполнено на Ruby on Rails 5.2.4
 
 Склонируйте репозиторий:
